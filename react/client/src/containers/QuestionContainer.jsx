@@ -10,7 +10,6 @@ class QuestionContainer extends React.Component {
       <div id="question-container">
         <p>Key</p>
         <Question question1 = "End of abdomen has long, slender breathing tube" answer1="Nepidae (water scorpion)" question2 = "Not as above" answer2="Go to 2"/>
-        <Family family="Nepidae"/>
       </div>
     )
   }
