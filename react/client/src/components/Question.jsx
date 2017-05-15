@@ -4,7 +4,10 @@ class Question extends React.Component {
   render(){
     return(
       <div id="question">
-        <p>Question item.</p>
+        <ul>
+        <li>{this.props.question1}</li>
+        <li>{this.props.question2}</li>
+        </ul>
       </div>
     )
   }
