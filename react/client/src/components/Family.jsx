@@ -6,7 +6,7 @@ class Family extends React.Component {
     return(
       <div id="family">
         <p>{this.props.family}</p>
-        <img src="nepidae.png"/>
+        <img src="./img/nepidae.png"/>
       </div>
     )
   }
