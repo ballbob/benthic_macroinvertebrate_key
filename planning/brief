@@ -1,0 +1,17 @@
+BENTHIC MACROINVERTEBRATE APP
+
+An important measure of water quality is the biodiversity in the water and benthos (soil/riverbed). The presence or absence of some organisms are important indicators of water quality.
+
+Species identification for a sample is done with a dichotomous key, which is a fancy name for a series of paired questions narrowing down what your sample could be until you have identified it. These questions go from 'does it have segmented legs' down to specifics like 'does it have a coiled spiral shell case'.
+
+Your client, the Scottish Environmental Protection Group (SEPG), want you to digitize one and make a simple dichotomous key application. They have provided the key for you to digitize.
+
+MVP:
+
+  1. Set of questions leading to identification of families for a particular taxon (eg larval coleoptera) with a view for each outcome.
+  2. Each of the families referenced should have an illustration and a link to a relevant webpage.
+  3. Available 'full sheet' view with all questions, and all images.
+
+Extensions:
+  1. Extend the key to another taxon.
+  2. Browse organisms.
