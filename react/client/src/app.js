@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import QuestionContainer from './containers/QuestionContainer'
 
 window.onload = function(){
   ReactDOM.render(
-    <h1> Hemiptera </h1>,
+    <QuestionContainer />,
     document.getElementById('app')
   );
 }
