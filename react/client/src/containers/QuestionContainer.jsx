@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Question from '../components/Question'
+import Family from '../components/Family'
 
 class QuestionContainer extends React.Component {
 
@@ -9,6 +10,7 @@ class QuestionContainer extends React.Component {
       <div id="question-container">
         <p>Key</p>
         <Question question1 = "End of abdomen has long, slender breathing tube" answer1="Nepidae (water scorpion)" question2 = "Not as above" answer2="Go to 2"/>
+        <Family family="Nepidae"/>
       </div>
     )
   }
