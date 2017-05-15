@@ -5,8 +5,8 @@ class Question extends React.Component {
     return(
       <div id="question">
         <ul>
-        <li>{this.props.question1}</li>
-        <li>{this.props.question2}</li>
+        <li>{this.props.question1} <button>{this.props.answer1}</button></li>
+        <li>{this.props.question2}  <button>{this.props.answer2}</button></li>
         </ul>
       </div>
     )
