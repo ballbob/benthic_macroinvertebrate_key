@@ -9,7 +9,7 @@ class Question extends React.Component {
         <li>{this.props.question1} <button>{this.props.answer1}</button></li>
         <li>{this.props.question2}  <button>{this.props.answer2}</button></li>
         </ul>
-        <Family family={this.props.answer1}/>
+        <Family family1={this.props.answer1}/>
       </div>
     )
   }
