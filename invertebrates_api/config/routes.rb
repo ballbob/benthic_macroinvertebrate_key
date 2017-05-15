@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :questions
+  scope path: "api" do
+    resources :questions
+  end
 
 end

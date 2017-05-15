@@ -1,7 +1,6 @@
-class QuestionController < ApplicationController
+class QuestionsController < ApplicationController
 
   def index
-
     questions = [
 
       {
@@ -41,6 +40,7 @@ class QuestionController < ApplicationController
 
     ]
 
+    render json: questions
   end
 
 end
