@@ -33,6 +33,7 @@ class QuestionContainer extends React.Component {
         this.setCurrentAnswer()
         this.setCurrentOtherText()
         this.setCurrentImg()
+        this.setButtonFunction()
       }
     })
   }
@@ -74,15 +75,16 @@ class QuestionContainer extends React.Component {
     this.setState({questionNumber:questionNumber})
   }
 
-  setButtonFunction(){
-    
+  nextQuestion(){
+    const number = this.state.questionNumber
+    const questions = this.state.allQs
+    const newNumber = questions[number].button_action
+    this.setQuestionNumber(newNumber)
   }
 
-  nextQuestion(){
-    const questions = this.state.allQs
-    const currentNumber = this.state.currentNumber
-    const nextQuestionNumber = questions[currentNumber].button_action
-    this.setQuestionNumber(nextQuestionNumber)
+  setButtonFunction(){
+    const button = document.getElementById('next-button')
+    button.onclick = this.nextQuestion()
   }
 
   render(){
