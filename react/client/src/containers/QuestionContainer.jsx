@@ -20,16 +20,34 @@ class QuestionContainer extends React.Component {
   }
 
   getQuestions(){
-    const questionRequest = new Ajax()
-    questionRequest.get("http://localhost:3001/api/questions",(err,status) => {
-      if(err) {
-        console.log("Error")
-      }
-      if(status === 200){
-        console.log("All good!")
-        console.log(response)
-      }
-    }) 
+    // const questionRequest = new Ajax()
+    // questionRequest.get("http://localhost:3001/api/questions",(err,status) => {
+    //   if(err) {
+    //     console.log("Error")
+    //   }
+    //   if(status === 200){
+    //     console.log("All good!")
+    //     console.log(request.response)
+    //   }
+    // }) 
+
+    const request = new XMLHttpRequest()
+    const url = "http://localhost:3001/api/questions"
+
+    request.withCredentials = true
+    request.open("GET",url)
+    request.onload = () => {
+      console.log("Ajax.get() has fetched the data.")
+      const questions = JSON.parse(request.response)
+      this.setState({allQs:questions})
+      console.log(this.state.allQs)
+    }
+
+    request.onerror = () => {
+      console.log("Error fetching the data with Ajax.get()")
+    }
+
+    request.send()
   }
 
   componentDidMount(){
