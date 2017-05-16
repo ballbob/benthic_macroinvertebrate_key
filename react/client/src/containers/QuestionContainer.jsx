@@ -40,10 +40,6 @@ class QuestionContainer extends React.Component {
     console.log(this.state.allQs)
   }
 
-  // componentDidMount(){
-  //   this.setCurrentQuestionTrait()
-  // }
-
   //State setters: decide what the question's text, answers and images will be.
   setCurrentQuestionTrait(){
     var number = this.state.questionNumber
