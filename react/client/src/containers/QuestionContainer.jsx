@@ -54,11 +54,15 @@ class QuestionContainer extends React.Component {
     this.getQuestions()
   }
 
+  getQuestion(){
+    return this.state.allQs[this.state.questionNumber].question
+  }
+
   render(){
     return(
       <div id="question-container">
         <p>Key</p>
-        <Question question = "End of abdomen has long, slender breathing tube" answer1="Nepidae (water scorpion)" question2 = "Not as above" answer2="Go to 2"/>
+        <Question question ="blah dee bla" answer="Nepidae (water scorpion)" otherText = "Not as above" nextButton="Next"/>
       </div>
     )
   }

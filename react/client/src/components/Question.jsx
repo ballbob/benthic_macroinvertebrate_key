@@ -6,8 +6,8 @@ class Question extends React.Component {
     return(
       <div id="question">
         <ul>
-        <li>{this.props.question1} <button>{this.props.answer1}</button></li>
-        <li>{this.props.question2}  <button>{this.props.answer2}</button></li>
+        <li>{this.props.question} <button>{this.props.answer}</button></li>
+        <li>{this.props.otherText}  <button>{this.props.nextButton}</button></li>
         </ul>
         <Family family1={this.props.answer1}/>
       </div>
