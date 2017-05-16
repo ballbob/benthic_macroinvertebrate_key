@@ -22,12 +22,12 @@ class QuestionContainer extends React.Component {
   getQuestions(){
     const questionRequest = new Ajax()
     questionRequest.get("http://localhost:3001/api/questions",(err,status) => {
-      if(err) {throw err}
+      if(err) {
+        console.log("Error")
+      }
       if(status === 200){
         console.log("All good!")
         console.log(response)
-      }else if(status ===401){
-        console.log("401 error - not authorized")
       }
     }) 
   }
