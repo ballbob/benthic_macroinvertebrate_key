@@ -19,7 +19,7 @@ class QuestionContainer extends React.Component {
     this.setState({questionNumber:questionNumber})
   }
 
-  getQuestions(){
+  fetchQuestions(){
     // const questionRequest = new Ajax()
     // questionRequest.get("http://localhost:3001/api/questions",(err,status) => {
     //   if(err) {
@@ -51,7 +51,7 @@ class QuestionContainer extends React.Component {
   }
 
   componentDidMount(){
-    this.getQuestions()
+    this.fetchQuestions()
   }
 
   getQuestion(){
@@ -62,7 +62,7 @@ class QuestionContainer extends React.Component {
     return(
       <div id="question-container">
         <p>Key</p>
-        <Question question ="blah dee bla" answer="Nepidae (water scorpion)" otherText = "Not as above" nextButton="Next"/>
+        <Question question ={this.getQuestion} answer="Nepidae (water scorpion)" otherText = "Not as above" nextButton="Next"/>
       </div>
     )
   }
