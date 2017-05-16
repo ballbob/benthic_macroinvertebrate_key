@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Question from '../components/Question'
 import Family from '../components/Family'
-// import Ajax from '../services/Ajax'
+import Ajax from '../services/Ajax'
 
 class QuestionContainer extends React.Component {
 
@@ -10,6 +10,7 @@ class QuestionContainer extends React.Component {
     super(props)
     this.setQuestionNumber = this.setQuestionNumber.bind(this)
     this.state = {
+      allQs: null,
       questionNumber: 1
     }
   }
@@ -18,10 +19,20 @@ class QuestionContainer extends React.Component {
     this.setState({questionNumber:questionNumber})
   }
 
-  // getQuestions(){
-  //   const questionRequest = new Ajax()
-  //   questionRequest.get("") 
-  // }
+  getQuestions(){
+    const questionRequest = new Ajax()
+    questionRequest.get("http://localhost:3001/api/questions",(err,status) => {
+      if(err) {throw err}
+      if(status === 200){
+        console.log("All good!")
+        console.log(response)
+      }
+    }) 
+  }
+
+  componentDidMount(){
+    this.getQuestions()
+  }
 
   render(){
     return(
