@@ -72,7 +72,7 @@ class QuestionContainer extends React.Component {
         <Question 
         question ={this.state.currentQuestion}
         answer={this.state.currentAnswer} 
-        otherText={this.state.otherText} nextButton="Next"/>
+        otherText={this.state.currentOtherText} nextButton="Next"/>
       </div>
     )
   }
