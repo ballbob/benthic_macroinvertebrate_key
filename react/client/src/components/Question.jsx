@@ -9,10 +9,6 @@ class Question extends React.Component {
           <li id="question-text"> 
             {this.props.question}
           </li>
-          
-          <li id="question-other-text">
-            {this.props.otherText} 
-          </li>
         </ul>
       </div>
     )

@@ -9,7 +9,6 @@ class QuestionContainer extends React.Component {
   //SETUP
   constructor(props){
     super(props)
-    this.setQuestionNumber = this.setQuestionNumber.bind(this)
     this.state = {
       allQs: null,
       questionNumber: 0,
@@ -18,6 +17,7 @@ class QuestionContainer extends React.Component {
       currentOtherText: "-",
       currentImg: "-"
     }
+    this.nextQuestion = this.nextQuestion.bind(this)
   }
 
   fetchQuestions(){
@@ -70,8 +70,10 @@ class QuestionContainer extends React.Component {
     this.setState({currentImg: newImg})
   }
 
-  setQuestionNumber(questionNumber){
-    this.setState({questionNumber:questionNumber})
+  setQuestionNumber(newQuestionNumber){
+    console.log(newQuestionNumber)
+    this.setState({questionNumber:newQuestionNumber})
+    console.log(this.state.questionNumber)
   }
 
   nextQuestion(){
@@ -88,16 +90,15 @@ class QuestionContainer extends React.Component {
 
         <Question 
           question ={this.state.currentQuestion}
-          answer={this.state.currentAnswer} 
-          otherText={this.state.currentOtherText} 
+          answer={this.state.currentAnswer}  
         />
 
         <button id="answer-button">
-          {this.state.currentAnswer}
+          As above: {this.state.currentAnswer}
         </button>
 
         <button id="next-button" onClick={this.nextQuestion}>
-          Next
+          {this.state.currentOtherText}
         </button>
 
         <Family 
