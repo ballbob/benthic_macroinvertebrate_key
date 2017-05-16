@@ -13,7 +13,8 @@ class QuestionContainer extends React.Component {
     this.state = {
       allQs: null,
       questionNumber: 0,
-      currentQuestion: "Please wait..."
+      currentQuestion: "Please wait...",
+      currentAnswer: "Please wait..."
     }
   }
 
@@ -29,23 +30,30 @@ class QuestionContainer extends React.Component {
 
       if(status === 200){
         this.setState({allQs:questions})
-        console.log(this.state.allQs)
         this.setCurrentQuestionTrait()
+        this.setCurrentAnswer()
       }
     })
   }
 
   componentDidMount(){
     this.fetchQuestions()
-    console.log(this.state.allQs)
   }
 
   //State setters: decide what the question's text, answers and images will be.
   setCurrentQuestionTrait(){
-    var number = this.state.questionNumber
-    var questions = this.state.allQs
-    var questionText = questions[number].question
+    const number = this.state.questionNumber
+    const questions = this.state.allQs
+    const questionText = questions[number].question
     this.setState({currentQuestion:questionText})
+  }
+
+  setCurrentAnswer(){
+    const number = this.state.questionNumber
+    const questions = this.state.allQs
+    const answerText = questions[number].answer
+    console.log("number: ",number)
+    this.setState({currentAnswer: answerText})
   }
 
   setQuestionNumber(questionNumber){
@@ -56,7 +64,7 @@ class QuestionContainer extends React.Component {
     return(
       <div id="question-container">
         <p>Key</p>
-        <Question question ={this.state.currentQuestion} answer="Nepidae (water scorpion)" otherText="Not as above" nextButton="Next"/>
+        <Question question ={this.state.currentQuestion} answer={this.state.currentAnswer} otherText="Not as above" nextButton="Next"/>
       </div>
     )
   }
