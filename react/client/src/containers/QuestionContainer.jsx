@@ -26,6 +26,8 @@ class QuestionContainer extends React.Component {
       if(status === 200){
         console.log("All good!")
         console.log(response)
+      }else if(status ===401){
+        console.log("401 error - not authorized")
       }
     }) 
   }
