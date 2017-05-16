@@ -40,7 +40,7 @@ class QuestionContainer extends React.Component {
       console.log("Ajax.get() has fetched the data.")
       const questions = JSON.parse(request.response)
       this.setState({allQs:questions})
-      console.log(this.state.allQs)
+      console.log("AllQs set.")
     }
 
     request.onerror = () => {
@@ -55,6 +55,7 @@ class QuestionContainer extends React.Component {
   }
 
   getQuestion(){
+    console.log(this.state.allQs)
     return this.state.allQs[this.state.questionNumber].question
   }
 
@@ -62,7 +63,7 @@ class QuestionContainer extends React.Component {
     return(
       <div id="question-container">
         <p>Key</p>
-        <Question question ={this.getQuestion} answer="Nepidae (water scorpion)" otherText = "Not as above" nextButton="Next"/>
+        <Question question ={this.getQuestion} answer="Nepidae (water scorpion)" otherText="Not as above" nextButton="Next"/>
       </div>
     )
   }
