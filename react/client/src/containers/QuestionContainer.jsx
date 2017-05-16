@@ -33,7 +33,6 @@ class QuestionContainer extends React.Component {
         this.setCurrentAnswer()
         this.setCurrentOtherText()
         this.setCurrentImg()
-        this.setButtonFunction()
       }
     })
   }
@@ -82,27 +81,28 @@ class QuestionContainer extends React.Component {
     this.setQuestionNumber(newNumber)
   }
 
-  setButtonFunction(){
-    const button = document.getElementById('next-button')
-    button.onclick = this.nextQuestion()
-  }
-
   render(){
     return(
       <div id="question-container">
         <p>Key</p>
 
         <Question 
-        question ={this.state.currentQuestion}
-        answer={this.state.currentAnswer} 
-        otherText={this.state.currentOtherText} 
-        nextButton="Next"
-        buttonFunction={this.nextQuestion}
+          question ={this.state.currentQuestion}
+          answer={this.state.currentAnswer} 
+          otherText={this.state.currentOtherText} 
         />
 
+        <button id="answer-button">
+          {this.state.currentAnswer}
+        </button>
+
+        <button id="next-button" onClick={this.nextQuestion}>
+          Next
+        </button>
+
         <Family 
-        family={this.state.currentAnswer} 
-        img={this.state.currentImg}/>
+          family={this.state.currentAnswer} 
+          img={this.state.currentImg}/>
       </div>
     )
   }

@@ -5,21 +5,14 @@ class Question extends React.Component {
 
     return(
       <div id="question">
-        <ul>
-        
-        <li> 
-          {this.props.question}           
-          <button id="answer-button">
-            {this.props.answer}
-          </button>
-        </li>
-        
-        <li>
-          {this.props.otherText} 
-        </li>
-        <button id="next-button">
-          {this.props.nextButton}
-        </button>
+        <ul>      
+          <li id="question-text"> 
+            {this.props.question}
+          </li>
+          
+          <li id="question-other-text">
+            {this.props.otherText} 
+          </li>
         </ul>
       </div>
     )
