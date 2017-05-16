@@ -95,16 +95,10 @@ class QuestionContainer extends React.Component {
 
         <Question 
           question ={this.state.currentQuestion}
-          answer={this.state.currentAnswer}  
+          answer={this.state.currentAnswer}
+          otherText={this.state.currentOtherText}
+          nextButtonClick={this.nextQuestion}  
         />
-
-        <button id="answer-button">
-          As above: {this.state.currentAnswer}
-        </button>
-
-        <button id="next-button" onClick={this.nextQuestion}>
-          {this.state.currentOtherText}
-        </button>
 
         <Family 
           family={this.state.currentAnswer} 

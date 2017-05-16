@@ -8,7 +8,18 @@ class Question extends React.Component {
         <ul>      
           <li id="question-text"> 
             {this.props.question}
+          <button id="answer-button">
+            {this.props.answer}
+          </button>
           </li>
+
+          <li id="other-text">
+            {this.props.otherText}
+            <button id="next-button" onClick={this.props.nextButtonClick}>
+              Next
+            </button>
+          </li>
+
         </ul>
       </div>
     )
