@@ -17,7 +17,7 @@ class QuestionContainer extends React.Component {
     }
   }
 
-  fetchQuestions(callback){
+  fetchQuestions(){
     const request = new XMLHttpRequest()
     const url = "http://localhost:3001/api/questions"
 
@@ -35,17 +35,15 @@ class QuestionContainer extends React.Component {
     }
 
     request.send()
-
-    callback()
   }
 
   componentWillMount(){
     this.fetchQuestions()
   }
 
-  componentDidMount(){
-    this.setCurrentQuestionTrait()
-  }
+  // componentDidMount(){
+  //   this.setCurrentQuestionTrait()
+  // }
 
   //State setters: decide what the question's text, answers and images will be.
   setCurrentQuestionTrait(){
