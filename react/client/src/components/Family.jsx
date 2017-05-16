@@ -4,7 +4,7 @@ class Family extends React.Component {
 
   constructor(props){
     super(props)
-    this.img = "./img/" + this.props.family + ".png"
+    this.img = "./img/nepidae.png"
   }
 
   render(){

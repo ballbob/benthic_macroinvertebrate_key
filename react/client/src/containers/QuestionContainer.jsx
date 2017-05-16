@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Question from '../components/Question'
 import Family from '../components/Family'
+import Ajax from '../services/Ajax'
 
 class QuestionContainer extends React.Component {
 
