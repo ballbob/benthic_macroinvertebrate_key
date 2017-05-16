@@ -74,6 +74,17 @@ class QuestionContainer extends React.Component {
     this.setState({questionNumber:questionNumber})
   }
 
+  setButtonFunction(){
+    
+  }
+
+  nextQuestion(){
+    const questions = this.state.allQs
+    const currentNumber = this.state.currentNumber
+    const nextQuestionNumber = questions[currentNumber].button_action
+    this.setQuestionNumber(nextQuestionNumber)
+  }
+
   render(){
     return(
       <div id="question-container">
@@ -84,6 +95,7 @@ class QuestionContainer extends React.Component {
         answer={this.state.currentAnswer} 
         otherText={this.state.currentOtherText} 
         nextButton="Next"
+        buttonFunction={this.nextQuestion}
         />
 
         <Family 

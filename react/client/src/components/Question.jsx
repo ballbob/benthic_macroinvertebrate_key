@@ -1,5 +1,4 @@
 import React from 'react'
-import Family from './Family'
 
 class Question extends React.Component {
   render(){
@@ -7,8 +6,20 @@ class Question extends React.Component {
     return(
       <div id="question">
         <ul>
-        <li>{this.props.question} <button>{this.props.answer}</button></li>
-        <li>{this.props.otherText}  <button>{this.props.nextButton}</button></li>
+        
+        <li> 
+          {this.props.question}           
+          <button id="answer-button">
+            {this.props.answer}
+          </button>
+        </li>
+        
+        <li>
+          {this.props.otherText} 
+        </li>
+        <button id="next-button">
+          {this.props.nextButton}
+        </button>
         </ul>
       </div>
     )
