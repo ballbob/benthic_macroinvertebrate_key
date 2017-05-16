@@ -13,25 +13,24 @@ class QuestionContainer extends React.Component {
     this.state = {
       allQs: null,
       questionNumber: 0,
-      currentQuestion: "Please wait...",
-      currentAnswer: "Please wait..."
+      currentQuestion: "-",
+      currentAnswer: "-",
+      currentOtherText: "-"
     }
   }
 
   fetchQuestions(){
-    console.log("fetchQuestions called")
     const ajaxRequest = new Ajax()
     ajaxRequest.get("http://localhost:3001/api/questions",(err,questions,status) => {
       if(err){
         console.log("Error")
       }
 
-      console.log(questions)
-
       if(status === 200){
         this.setState({allQs:questions})
         this.setCurrentQuestionTrait()
         this.setCurrentAnswer()
+        this.setCurrentOtherText()
       }
     })
   }
@@ -52,8 +51,14 @@ class QuestionContainer extends React.Component {
     const number = this.state.questionNumber
     const questions = this.state.allQs
     const answerText = questions[number].answer
-    console.log("number: ",number)
     this.setState({currentAnswer: answerText})
+  }
+
+  setCurrentOtherText(){
+    const number = this.state.questionNumber
+    const questions = this.state.allQs
+    const newOtherText = questions[number].othertext  
+    this.setState({currentOtherText: newOtherText})
   }
 
   setQuestionNumber(questionNumber){
@@ -64,7 +69,10 @@ class QuestionContainer extends React.Component {
     return(
       <div id="question-container">
         <p>Key</p>
-        <Question question ={this.state.currentQuestion} answer={this.state.currentAnswer} otherText="Not as above" nextButton="Next"/>
+        <Question 
+        question ={this.state.currentQuestion}
+        answer={this.state.currentAnswer} 
+        otherText={this.state.otherText} nextButton="Next"/>
       </div>
     )
   }

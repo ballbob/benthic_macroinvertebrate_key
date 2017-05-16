@@ -6,7 +6,6 @@ class Ajax {
     request.open("GET",url)
 
     request.onload = () => {
-      console.log("Ajax.get() has fetched the data.")
       whenFetched(null,JSON.parse(request.response),request.status)
     }
 
