@@ -10,7 +10,6 @@ class Question extends React.Component {
         <li>{this.props.question} <button>{this.props.answer}</button></li>
         <li>{this.props.otherText}  <button>{this.props.nextButton}</button></li>
         </ul>
-        <Family family1={this.props.answer1}/>
       </div>
     )
   }

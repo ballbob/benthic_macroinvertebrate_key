@@ -2,7 +2,7 @@ Question.destroy_all
 
 hemiptera1 = Question.create({
   question: "End of abdomen has long, slender breathing tube",
-  answer: "Nepidae (water scorpion",
+  answer: "Nepidae (water scorpion)",
   answerimg: "/img/nepidae.png",
   button_action: 1, 
   othertext: "Not as above"})

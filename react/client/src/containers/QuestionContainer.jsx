@@ -15,7 +15,8 @@ class QuestionContainer extends React.Component {
       questionNumber: 0,
       currentQuestion: "-",
       currentAnswer: "-",
-      currentOtherText: "-"
+      currentOtherText: "-",
+      currentImg: "-"
     }
   }
 
@@ -31,6 +32,7 @@ class QuestionContainer extends React.Component {
         this.setCurrentQuestionTrait()
         this.setCurrentAnswer()
         this.setCurrentOtherText()
+        this.setCurrentImg()
       }
     })
   }
@@ -61,6 +63,13 @@ class QuestionContainer extends React.Component {
     this.setState({currentOtherText: newOtherText})
   }
 
+  setCurrentImg(){
+    const number = this.state.questionNumber
+    const questions = this.state.allQs
+    const newImg = questions[number].answerimg
+    this.setState({currentImg: newImg})
+  }
+
   setQuestionNumber(questionNumber){
     this.setState({questionNumber:questionNumber})
   }
@@ -69,10 +78,17 @@ class QuestionContainer extends React.Component {
     return(
       <div id="question-container">
         <p>Key</p>
+
         <Question 
         question ={this.state.currentQuestion}
         answer={this.state.currentAnswer} 
-        otherText={this.state.currentOtherText} nextButton="Next"/>
+        otherText={this.state.currentOtherText} 
+        nextButton="Next"
+        />
+
+        <Family 
+        family={this.state.currentAnswer} 
+        img={this.state.currentImg}/>
       </div>
     )
   }

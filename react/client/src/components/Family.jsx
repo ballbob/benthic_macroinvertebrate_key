@@ -4,13 +4,16 @@ class Family extends React.Component {
 
   constructor(props){
     super(props)
-    this.img = "./img/nepidae.png"
+  }
+
+  componentDidMount(){
+    console.log(this.props.family)
   }
 
   render(){
     return(
       <div id="family">
-        <img src={this.img}/>
+        <img src={this.props.img}/>
         <p>{this.props.family}</p>
       </div>
     )
