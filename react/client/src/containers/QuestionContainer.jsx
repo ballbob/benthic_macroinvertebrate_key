@@ -6,6 +6,18 @@ import Ajax from '../services/Ajax'
 
 class QuestionContainer extends React.Component {
 
+  constructor(props){
+    super(props)
+    this.setQuestion = this.setQuestion.bind(this)
+    this.state = {
+      question: 1
+    }
+  }
+
+  setQuestion(questionNumber){
+    this.setState({question:questionNumber})
+  }
+
   render(){
     return(
       <div id="question-container">
