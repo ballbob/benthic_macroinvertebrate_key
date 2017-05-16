@@ -18,27 +18,26 @@ class QuestionContainer extends React.Component {
   }
 
   fetchQuestions(){
-    const request = new XMLHttpRequest()
-    const url = "http://localhost:3001/api/questions"
+    console.log("fetchQuestions called")
+    const ajaxRequest = new Ajax()
+    ajaxRequest.get("http://localhost:3001/api/questions",(err,questions,status) => {
+      if(err){
+        console.log("Error")
+      }
 
-    request.withCredentials = true
-    request.open("GET",url)
-    request.onload = () => {
-      console.log("Ajax.get() has fetched the data.")
-      const questions = JSON.parse(request.response)
-      this.setState({allQs:questions})
-      console.log("AllQs set.")
-    }
+      console.log(questions)
 
-    request.onerror = () => {
-      console.log("Error fetching the data with Ajax.get()")
-    }
-
-    request.send()
+      if(status === 200){
+        this.setState({allQs:questions})
+        console.log(this.state.allQs)
+        this.setCurrentQuestionTrait()
+      }
+    })
   }
 
-  componentWillMount(){
+  componentDidMount(){
     this.fetchQuestions()
+    console.log(this.state.allQs)
   }
 
   // componentDidMount(){
