@@ -6,31 +6,18 @@ import Ajax from '../services/Ajax'
 
 class QuestionContainer extends React.Component {
 
+  //SETUP
   constructor(props){
     super(props)
     this.setQuestionNumber = this.setQuestionNumber.bind(this)
     this.state = {
       allQs: null,
-      questionNumber: 1
+      questionNumber: 0,
+      currentQuestion: "Please wait..."
     }
   }
 
-  setQuestionNumber(questionNumber){
-    this.setState({questionNumber:questionNumber})
-  }
-
-  fetchQuestions(){
-    // const questionRequest = new Ajax()
-    // questionRequest.get("http://localhost:3001/api/questions",(err,status) => {
-    //   if(err) {
-    //     console.log("Error")
-    //   }
-    //   if(status === 200){
-    //     console.log("All good!")
-    //     console.log(request.response)
-    //   }
-    // }) 
-
+  fetchQuestions(callback){
     const request = new XMLHttpRequest()
     const url = "http://localhost:3001/api/questions"
 
@@ -48,22 +35,35 @@ class QuestionContainer extends React.Component {
     }
 
     request.send()
+
+    callback()
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.fetchQuestions()
   }
 
-  getQuestion(){
-    console.log(this.state.allQs)
-    return this.state.allQs[this.state.questionNumber].question
+  componentDidMount(){
+    this.setCurrentQuestionTrait()
+  }
+
+  //State setters: decide what the question's text, answers and images will be.
+  setCurrentQuestionTrait(){
+    var number = this.state.questionNumber
+    var questions = this.state.allQs
+    var questionText = questions[number].question
+    this.setState({currentQuestion:questionText})
+  }
+
+  setQuestionNumber(questionNumber){
+    this.setState({questionNumber:questionNumber})
   }
 
   render(){
     return(
       <div id="question-container">
         <p>Key</p>
-        <Question question ={this.getQuestion} answer="Nepidae (water scorpion)" otherText="Not as above" nextButton="Next"/>
+        <Question question ={this.state.currentQuestion} answer="Nepidae (water scorpion)" otherText="Not as above" nextButton="Next"/>
       </div>
     )
   }
