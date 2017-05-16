@@ -28,11 +28,12 @@ class QuestionContainer extends React.Component {
       }
 
       if(status === 200){
-        this.setState({allQs:questions})
-        this.setCurrentQuestionTrait()
-        this.setCurrentAnswer()
-        this.setCurrentOtherText()
-        this.setCurrentImg()
+        this.setState({allQs:questions}, function(){
+          this.setCurrentQuestionTrait()
+          this.setCurrentAnswer()
+          this.setCurrentOtherText()
+          this.setCurrentImg()
+        })
       }
     })
   }
@@ -72,8 +73,12 @@ class QuestionContainer extends React.Component {
 
   setQuestionNumber(newQuestionNumber){
     console.log(newQuestionNumber)
-    this.setState({questionNumber:newQuestionNumber})
-    console.log(this.state.questionNumber)
+    this.setState({questionNumber:newQuestionNumber}, function(){
+      this.setCurrentQuestionTrait()
+      this.setCurrentAnswer()
+      this.setCurrentOtherText()
+      this.setCurrentImg()
+    })
   }
 
   nextQuestion(){
