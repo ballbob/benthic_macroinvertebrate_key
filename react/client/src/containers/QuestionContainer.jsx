@@ -12,12 +12,7 @@ class QuestionContainer extends React.Component {
     this.state = {
       allQs: null,
       currentQuestionObject: "-",
-      questionNumber: 0,
-      currentQuestion: "-",
-      currentAnswer: "-",
-      currentOtherText: "-",
-      currentImg: "-",
-      currentInfo: "-"
+      questionNumber: 0
     }
     this.nextQuestion = this.nextQuestion.bind(this)
   }
