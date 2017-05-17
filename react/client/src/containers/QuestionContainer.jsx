@@ -112,9 +112,9 @@ class QuestionContainer extends React.Component {
         <p>Key</p>
 
         <Question 
-          question ={this.state.currentQuestion}
-          answer={this.state.currentAnswer}
-          otherText={this.state.currentOtherText}
+          question ={this.state.currentQuestionObject.question}
+          answer={this.state.currentQuestionObject.answer}
+          otherText={this.state.currentQuestionObject.othertext}
           nextButtonClick={this.nextQuestion}  
         />
 
