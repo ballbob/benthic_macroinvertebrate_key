@@ -8,7 +8,7 @@ class Family extends React.Component {
 
   render(){
     return(
-      <div id="family">
+      <div id="family-component">
         <img src={this.props.family.answerimg}/>
         <p><b>Family:</b> {this.props.family.answer}</p>
         <p><b>Information:</b> {this.props.family.information}</p>
