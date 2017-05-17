@@ -38,6 +38,8 @@ class QuestionContainer extends React.Component {
   }
 
   //State setters: decide what the question's text, answers and images will be.
+
+  //A taxon's information becomes available to the app when it is loaded from the allQs array of taxa into the currentQuestionObject state variable.
   setCurrentQuestionObject(){
     const number = this.state.questionNumber
     const questions = this.state.allQs
@@ -45,6 +47,7 @@ class QuestionContainer extends React.Component {
     this.setState({currentQuestionObject:questionObject})
   }
 
+  //Which question to load is determined by the question number state variable, which tells the app which point in the array to go to.
   setQuestionNumber(newQuestionNumber){
     this.setState({questionNumber:newQuestionNumber}, function(){
       this.setCurrentQuestionObject()
@@ -52,6 +55,8 @@ class QuestionContainer extends React.Component {
   }
 
   //Button functions 
+
+  //The 'next' button changes 'currentQuestion' from the current point in the array to the 'next' array index, specified in the taxon's question object (button_action). This is to allow for branching when the app is expanded outside of the Hemiptera.
   nextQuestion(){
     const number = this.state.questionNumber
     const questions = this.state.allQs
@@ -60,11 +65,13 @@ class QuestionContainer extends React.Component {
     this.hideFamily()
   }
 
+  //The 'answer' button reveals the taxon reference, information and illustration. Some sensitivity information is included as flavour text, but taxa are usually assessed as a group (diversity, overall sensitivity, et cetera).
   revealFamily(){
     const family = document.getElementById('family-component')
     family.style.display = "block"
   }
 
+  //This should be reversed when we go to the next question.
   hideFamily(){
     const family = document.getElementById('family-component')
     family.style.display="none"
