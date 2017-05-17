@@ -61,7 +61,6 @@ class QuestionContainer extends React.Component {
 
   revealFamily(){
     const family = document.getElementById('family-component')
-    console.log(family.style.display)
     family.style.display = "block"
   }
 
