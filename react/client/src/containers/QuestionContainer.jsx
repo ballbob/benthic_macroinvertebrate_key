@@ -58,7 +58,7 @@ class QuestionContainer extends React.Component {
     this.setQuestionNumber(newNumber)
   }
 
-  toggleFamily(){
+  revealFamily(){
     const family = document.getElementById('family-component')
     console.log(family.style.display)
     family.style.display = "block"
@@ -73,7 +73,7 @@ class QuestionContainer extends React.Component {
           question ={this.state.currentQuestionObject.question}
           answer={this.state.currentQuestionObject.answer}
           otherText={this.state.currentQuestionObject.othertext}
-          answerButtonClick={this.toggleFamily}
+          answerButtonClick={this.revealFamily}
           nextButtonClick={this.nextQuestion}  
         />
 

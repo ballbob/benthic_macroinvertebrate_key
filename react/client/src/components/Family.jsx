@@ -11,6 +11,7 @@ class Family extends React.Component {
       <div id="family-component">
         <img src={this.props.family.answerimg}/>
         <p><b>Family:</b> {this.props.family.answer}</p>
+        <p><b>SIGNAL-2 tolerance score:</b> {this.props.family.signalscore}</p>
         <p><b>Information:</b> {this.props.family.information}</p>
       </div>
     )
