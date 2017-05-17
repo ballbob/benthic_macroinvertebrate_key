@@ -17,13 +17,13 @@ class QuestionContainer extends React.Component {
     this.nextQuestion = this.nextQuestion.bind(this)
   }
 
+  //Each taxon has information in a JSON object in the API, referred to here as a question. Get the questions and other data from the API.
   fetchQuestions(){
     const ajaxRequest = new Ajax()
     ajaxRequest.get("http://localhost:3001/api/questions",(err,questions,status) => {
       if(err){
         console.log("Error")
       }
-
       if(status === 200){
         this.setState({allQs:questions}, function(){
           this.setCurrentQuestionObject()
@@ -32,6 +32,7 @@ class QuestionContainer extends React.Component {
     })
   }
 
+  //Set the app to fetch all this once the component has loaded.
   componentDidMount(){
     this.fetchQuestions()
   }
