@@ -60,10 +60,8 @@ class QuestionContainer extends React.Component {
 
   toggleFamily(){
     const family = document.getElementById('family-component')
-    if(family.style.display === "none"){
-      console.log(family.style.display)
-      family.style.display = "block"
-    }
+    console.log(family.style.display)
+    family.style.display = "block"
   }
 
   render(){
