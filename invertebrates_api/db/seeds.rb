@@ -1,6 +1,5 @@
 Question.destroy_all
 
-
 #HEMIPTERA - the true bugs.
 hemiptera1 = Question.create({
   question: "End of abdomen has long, slender breathing tube",
