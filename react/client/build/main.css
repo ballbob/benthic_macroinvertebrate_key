@@ -1,6 +1,8 @@
 body {
   width: 100%;
   max-width: 1000px;
+  display: flex;
+  flex-direction: column;
   margin: auto;
   color: #3a3a3a;
   font-family: 'Baskerville';
