@@ -11,6 +11,7 @@ class QuestionContainer extends React.Component {
     super(props)
     this.state = {
       allQs: null,
+      currentQuestionObject: "-"
       questionNumber: 0,
       currentQuestion: "-",
       currentAnswer: "-",
@@ -30,6 +31,7 @@ class QuestionContainer extends React.Component {
 
       if(status === 200){
         this.setState({allQs:questions}, function(){
+          this.setCurrentQuestionObject()
           this.setCurrentQuestionTrait()
           this.setCurrentAnswer()
           this.setCurrentOtherText()
@@ -45,6 +47,12 @@ class QuestionContainer extends React.Component {
   }
 
   //State setters: decide what the question's text, answers and images will be.
+  setCurrentQuestionObject(){
+    const number = this.state.questionNumber
+    const questions = this.state.allQs
+    const questionObject = questions[number]
+    this.setState({currentQuestionObject:questionObject})
+  }
   setCurrentQuestionTrait(){
     const number = this.state.questionNumber
     const questions = this.state.allQs
