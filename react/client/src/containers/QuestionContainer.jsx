@@ -70,9 +70,8 @@ class QuestionContainer extends React.Component {
         />
 
         <Family 
-          family={this.state.currentQuestionObject.answer} 
-          info={this.state.currentQuestionObject.information}
-          img={this.state.currentQuestionObject.answerimg}/>
+          family={this.state.currentQuestionObject} 
+        />
       </div>
     )
   }
