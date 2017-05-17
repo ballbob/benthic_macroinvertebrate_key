@@ -20,10 +20,12 @@ body {
 
 #next-button {
   margin:4em;
+  font-family: 'Baskerville Bold';
 }
 
 #answer-button {
   margin:4em;
+  font-family: 'Baskerville Bold';
 }
 
 #family-component {
