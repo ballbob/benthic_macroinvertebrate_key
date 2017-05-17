@@ -14,7 +14,8 @@ class Family extends React.Component {
     return(
       <div id="family">
         <img src={this.props.img}/>
-        <p>{this.props.family}</p>
+        <p><b>Family:</b> {this.props.family}</p>
+        <p><b>Information:</b> {this.props.info}</p>
       </div>
     )
   }

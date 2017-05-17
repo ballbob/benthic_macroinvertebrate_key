@@ -87,6 +87,7 @@ class QuestionContainer extends React.Component {
       this.setCurrentAnswer()
       this.setCurrentOtherText()
       this.setCurrentImg()
+      this.setCurrentInfo()
     })
   }
 
@@ -111,6 +112,7 @@ class QuestionContainer extends React.Component {
 
         <Family 
           family={this.state.currentAnswer} 
+          info={this.state.currentInfo}
           img={this.state.currentImg}/>
       </div>
     )

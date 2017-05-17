@@ -12,7 +12,6 @@ class Question extends React.Component {
             {this.props.answer}
           </button>
           </li>
-
           <li id="other-text">
             {this.props.otherText}
             <button id="next-button" onClick={this.props.nextButtonClick}>
