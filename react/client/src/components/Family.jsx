@@ -6,10 +6,6 @@ class Family extends React.Component {
     super(props)
   }
 
-  componentDidMount(){
-    console.log(this.props.family)
-  }
-
   render(){
     return(
       <div id="family">
