@@ -11,7 +11,7 @@ class QuestionContainer extends React.Component {
     super(props)
     this.state = {
       allQs: null,
-      currentQuestionObject: "-"
+      currentQuestionObject: "-",
       questionNumber: 0,
       currentQuestion: "-",
       currentAnswer: "-",
