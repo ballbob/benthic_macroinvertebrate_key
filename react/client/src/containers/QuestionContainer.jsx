@@ -32,7 +32,6 @@ class QuestionContainer extends React.Component {
       if(status === 200){
         this.setState({allQs:questions}, function(){
           this.setCurrentQuestionObject()
-          this.setCurrentAnswer()
           this.setCurrentOtherText()
           this.setCurrentImg()
           this.setCurrentInfo()
@@ -51,14 +50,6 @@ class QuestionContainer extends React.Component {
     const questions = this.state.allQs
     const questionObject = questions[number]
     this.setState({currentQuestionObject:questionObject})
-  }
-
-
-  setCurrentAnswer(){
-    const number = this.state.questionNumber
-    const questions = this.state.allQs
-    const answerText = questions[number].answer
-    this.setState({currentAnswer: answerText})
   }
 
   setCurrentOtherText(){
