@@ -50,11 +50,16 @@ class QuestionContainer extends React.Component {
     })
   }
 
+  //Button functions 
   nextQuestion(){
     const number = this.state.questionNumber
     const questions = this.state.allQs
     const newNumber = questions[number].button_action
     this.setQuestionNumber(newNumber)
+  }
+
+  toggleFamily(){
+
   }
 
   render(){
@@ -66,6 +71,7 @@ class QuestionContainer extends React.Component {
           question ={this.state.currentQuestionObject.question}
           answer={this.state.currentQuestionObject.answer}
           otherText={this.state.currentQuestionObject.othertext}
+          answerButtonClick={this.toggleFamily}
           nextButtonClick={this.nextQuestion}  
         />
 
