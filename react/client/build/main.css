@@ -1,12 +1,28 @@
 body {
   width: 100%;
-  max-width: 1000px;
+  min-width: 1000px;
   display: flex;
   flex-direction: column;
   margin: auto;
   color: #3a3a3a;
   font-family: 'Baskerville';
   font-size: 1.5em;
+}
+
+#question-container {
+
+}
+
+#question-component {
+
+}
+
+#next-button {
+
+}
+
+#answer-button {
+  
 }
 
 #family-component {
