@@ -56,12 +56,18 @@ class QuestionContainer extends React.Component {
     const questions = this.state.allQs
     const newNumber = questions[number].button_action
     this.setQuestionNumber(newNumber)
+    this.hideFamily()
   }
 
   revealFamily(){
     const family = document.getElementById('family-component')
     console.log(family.style.display)
     family.style.display = "block"
+  }
+
+  hideFamily(){
+    const family = document.getElementById('family-component')
+    family.style.display="none"
   }
 
   render(){
