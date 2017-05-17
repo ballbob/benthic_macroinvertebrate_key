@@ -21,11 +21,15 @@ body {
 #next-button {
   margin:4em;
   font-family: 'Baskerville Bold';
+  position:relative;
+  left:40px;
 }
 
 #answer-button {
   margin:4em;
   font-family: 'Baskerville Bold';
+  position:relative;
+  left:40px;
 }
 
 #family-component {
