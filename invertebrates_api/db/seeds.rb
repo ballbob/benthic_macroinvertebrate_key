@@ -1,5 +1,7 @@
 Question.destroy_all
 
+
+#HEMIPTERA - the true bugs.
 hemiptera1 = Question.create({
   question: "End of abdomen has long, slender breathing tube",
   answer: "Nepidae (water scorpion)",
@@ -49,5 +51,3 @@ hemiptera5 = Question.create({
   information: "Found in standing water or slow-moving ponds. Extremely tolerant to pollution."
 
 })
-
-hemipteraArray = [hemiptera1,hemiptera2,hemiptera3,hemiptera4,hemiptera5]
