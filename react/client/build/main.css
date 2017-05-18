@@ -18,14 +18,12 @@ body {
 }
 
 #next-button {
-  margin:4em;
   font-family: 'Baskerville Bold';
   position:relative;
   left:30px;
 }
 
 #answer-button {
-  margin:4em;
   font-family: 'Baskerville Bold';
   position:relative;
   left:30px;
