@@ -8,7 +8,8 @@ hemiptera1 = Question.create({
   button_action: 1, 
   othertext: "Not as above",
   signalscore: 3,
-  information: "Insects in this family are moderately tolerant to pollution. Found among plants or on the water surface of slow-moving waters."})
+  information: "Insects in this family are moderately tolerant to pollution. Found among plants or on the water surface of slow-moving waters."
+})
 
 hemiptera2 = Question.create({
   question: "Long and slender body and legs, “walks” on water surface, commonly called water striders",
