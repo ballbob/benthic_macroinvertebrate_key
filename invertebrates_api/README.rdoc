@@ -2,6 +2,8 @@
 
 These instructions are for running the project on an Ubuntu virtual machine.
 
+To begin with, we have to get your database created and running.
+
 To start,
 
 	bundle
@@ -51,5 +53,18 @@ to list all databases you have, and
 
 To investigate the questions made.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Now you have your database.
+
+We now must start the API running.
+
+This is much easier!
+
+Just type into the terminal:
+
+	rails server
+
+And the API is hosted on localhost:3000/api.
+
+View the questions in localhost:3000/api/questions.
+
+If this is one big lump of text, it's because it's all in JSON, stored as a 'hash'. Look up a JSON viewer extension for your browser.
