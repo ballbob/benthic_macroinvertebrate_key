@@ -1,28 +1,55 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+These instructions are for running the project on an Ubuntu virtual machine.
 
-Things you may want to cover:
+To start,
 
-* Ruby version
+	bundle
 
-* System dependencies
+The project requires user 'bob' to function, and this user needs permission to create and manage the database.
 
-* Configuration
+So, to create this user,
 
-* Database creation
+	sudo -u postgres createuser bob
 
-* Database initialization
+	sudo -u postgres psql 
+		alter role bob with createdb;
+		alter role bob with createrole;
+		\q
 
-* How to run the test suite
+To create the database for the first time:
 
-* Services (job queues, cache servers, search engines, etc.)
+	bundle exec rake db:create
 
-* Deployment instructions
+(You only need to do this the first time.)
 
-* ...
+Next, you need to create the tables within the database. This is done with 'migrate'.
 
+	bundle exec rake db:migrate
+
+('Migrate' here refers to changing the database from one form to another, which carries the data with it. As it is developed, new data and features are required. The migration referred to is of the data from one form of the database to another.)
+
+Now, we want to 'seed' the database with our data.
+
+	bundle exec rake db:seed
+
+Your database should exist now with all your invertebrate data.
+
+(Both the test and the API's data are created here.)
+
+You can check this in PostGreSQL by typing
+
+	psql
+
+Then in the PSQL environment,
+
+		\l 
+
+to list all databases you have, and
+
+		\connect invertebrates_api_development
+
+To investigate the questions made.
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
